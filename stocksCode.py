@@ -192,17 +192,16 @@ class Business:
         discount_rate = self.get_discount_rate()
         discounted_cashflow_total = self.calculate_discount_cash()
 
-        terminal_year2 = 82426367614
-        discount_rate2 = 0.05
+  
         terminal_growth_rate = 0.002
 
-        terminal_value = (terminal_year2 * (1 + terminal_growth_rate)) / (discount_rate2 - terminal_growth_rate)
+        terminal_value = (terminal_year * (1 + terminal_growth_rate)) / (discount_rate - terminal_growth_rate)
 
         total_pv_cashflow = terminal_value + discounted_cashflow_total
 
         return int(total_pv_cashflow)
 
-    def calculate_intrinsiv_value(self):
+    def calculate_intrinsic_value(self):
         total_pv = self.calculate_total_pv_cashflow()
         debt = int(self.get_debt())
         shares = int(self.get_shares())
