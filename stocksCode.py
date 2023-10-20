@@ -218,19 +218,26 @@ class Business:
         return g
 
         
+
+def main():
+    ticker = input('Enter ticker symbol: ')
+    try:
+        business = Business(ticker)
+        print('====================================')
+        print('Business:', ticker)
+        print('====================================')
+        print('Finance:')
+        print('------------------------------------')
+        print('Debt:', business.get_debt())
+        print('Shares:', business.get_shares())
+        print('Growth rate:', business.get_growth_rate())
+        print('Income:', business.get_income())
+        print('Share Price:', business.get_share_price())
+        print('------------------------------------')
+        print('Valuation:', business.calculate_intrinsic_value())
+        print('------------------------------------')
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
 if __name__ == '__main__':
-    ticker = input('Enter ticker symbol:')
-    business = Business(ticker)
-    print('====================================')
-    print('Business:', ticker)
-    print('====================================')
-    print('Finance:')
-    print('------------------------------------')
-    print('Debt:', business.get_debt())
-    print('Shares:', business.get_shares())
-    print('Growth rate:', business.get_growth_rate())
-    print('Income:', business.get_income())
-    print('Share Price:', business.get_share_price())
-    print('------------------------------------')
-    print('Valuation:', business.calculate_intrinsiv_value())
-    print('------------------------------------')
+    main()
